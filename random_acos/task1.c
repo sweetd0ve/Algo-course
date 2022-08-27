@@ -21,7 +21,6 @@ int main(int argc, char ** argv) {
     sprintf(name, "%d", pid);
     strcat(p, name);
     strcat(p, ".py");
-//    printf("%s\n", p);
     
     int fd = creat(p, 0700);
 
@@ -36,7 +35,6 @@ int main(int argc, char ** argv) {
     
     str = ")\nos.remove(argv[0])\n";
     write(fd, str, strlen(str) * sizeof(char));
-//    printf("%ld\n", strlen(str) * sizeof(char));
     close(fd);
 
     execlp(p, p, NULL);
